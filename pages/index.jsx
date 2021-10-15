@@ -22,7 +22,7 @@ export default function Index({
   return (
     <>
       <Hero />
-      <Container disableGutters>
+      <Container>
         <Box sx={{ py: 12 }}>
           {/* Popular movies */}
           <Box id="popular-movies" sx={{ mb: 8 }}>
