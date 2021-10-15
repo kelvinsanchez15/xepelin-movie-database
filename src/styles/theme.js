@@ -23,9 +23,16 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: "none",
-          padding: "18px 16px",
         },
       },
+      variants: [
+        {
+          props: { size: "extra-large" },
+          style: {
+            padding: "18px 16px",
+          },
+        },
+      ],
     },
   },
 });
