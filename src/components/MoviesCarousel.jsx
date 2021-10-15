@@ -44,7 +44,6 @@ function CarouselCustomButtonGroup({ next, previous, goToSlide, ...rest }) {
         width: "calc(100% + 24px);",
         left: "-16px",
       }}
-      className="carousel-button-group"
     >
       <IconButton
         className={currentSlide === 0 ? "disable" : ""}
@@ -57,6 +56,8 @@ function CarouselCustomButtonGroup({ next, previous, goToSlide, ...rest }) {
           "&:hover": {
             backgroundColor: (theme) => theme.palette.primary.dark,
           },
+          // Ocultar botón cuando el carousel está en el primer slide
+          visibility: currentSlide === 0 ? "hidden" : "visible",
         }}
       >
         <ArrowBackIcon fontSize="large" />
