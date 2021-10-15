@@ -18,6 +18,16 @@ const theme = createTheme({
       xl: 1920,
     },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+          padding: "18px 16px",
+        },
+      },
+    },
+  },
 });
 
 export default theme;
