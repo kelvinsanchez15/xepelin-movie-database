@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Box, AppBar, Toolbar, Button, useScrollTrigger } from "@mui/material";
 
+import Link from "../Link";
+
 function ElevationScroll({ children }) {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -18,10 +20,17 @@ export default function Navbar() {
       <ElevationScroll>
         <AppBar elevation={0}>
           <Toolbar sx={{ justifyContent: "flex-end" }}>
-            <Button variant="contained" sx={{ mr: 2 }}>
+            <Button
+              component={Link}
+              href="/signin"
+              variant="contained"
+              sx={{ mr: 2 }}
+            >
               Entrar
             </Button>
-            <Button variant="contained">Registrarse</Button>
+            <Button component={Link} href="/signup" variant="contained">
+              Registrarse
+            </Button>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
