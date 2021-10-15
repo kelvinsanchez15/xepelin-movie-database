@@ -1,4 +1,4 @@
-import { Container, Box, Grid, Typography, IconButton } from "@mui/material";
+import { Container, Box, Grid, Typography } from "@mui/material";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
