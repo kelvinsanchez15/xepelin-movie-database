@@ -24,7 +24,7 @@ export default function Index({
       <Hero />
       <Container>
         <Box sx={{ py: 12 }}>
-          {/* Popular movies */}
+          {/* Peliculas más populares */}
           <Box id="popular-movies" sx={{ mb: 8 }}>
             <Grid container direction="row" alignItems="center" spacing={1}>
               <Grid item>
@@ -43,7 +43,7 @@ export default function Index({
             <MoviesCarousel movies={popularMovies} />
           </Box>
 
-          {/* Top Rated movies */}
+          {/* Peliculas mejor evaluadas */}
           <Box id="top-rated-movies" sx={{ mb: 8 }}>
             <Grid container direction="row" alignItems="center" spacing={1}>
               <Grid item>
@@ -62,7 +62,7 @@ export default function Index({
             <MoviesCarousel movies={topRatedMovies} />
           </Box>
 
-          {/* Upcoming movies */}
+          {/* Próximos eventos */}
           <Box id="upcoming-movies" sx={{ mb: 8 }}>
             <Grid container direction="row" alignItems="center" spacing={1}>
               <Grid item>
@@ -81,7 +81,7 @@ export default function Index({
             <MoviesCarousel movies={upcomingMovies} />
           </Box>
 
-          {/* Latest movies */}
+          {/* Últimos lanzamientos */}
           <Box id="latest-movies" sx={{ mb: 8 }}>
             <Grid container direction="row" alignItems="center" spacing={1}>
               <Grid item>
