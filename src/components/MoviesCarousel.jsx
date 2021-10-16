@@ -1,4 +1,4 @@
-import { Box, IconButton } from "@mui/material";
+import { Box, IconButton, Skeleton } from "@mui/material";
 import Carousel from "react-multi-carousel";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -80,7 +80,7 @@ function CarouselCustomButtonGroup({ next, previous, goToSlide, ...rest }) {
   );
 }
 
-export default function MoviesCarousel({ movies }) {
+export default function MoviesCarousel({ movies, loading }) {
   return (
     <Box sx={{ position: "relative" }}>
       <Carousel
@@ -89,15 +89,28 @@ export default function MoviesCarousel({ movies }) {
         renderButtonGroupOutside
         customButtonGroup={<CarouselCustomButtonGroup />}
       >
-        {movies.map(({ id, title, releaseDate, backdropPath, overview }) => (
-          <MovieCard
-            key={id}
-            title={title}
-            releaseDate={releaseDate}
-            backdropPath={backdropPath}
-            overview={overview}
-          />
-        ))}
+        {loading
+          ? Array.from(new Array(6)).map((item, index) => (
+              <Box key={index}>
+                <Skeleton
+                  variant="rectangular"
+                  width={188}
+                  height={282}
+                  sx={{ mb: 2 }}
+                />
+                <Skeleton variant="text" width={188} />
+                <Skeleton variant="text" width={188} />
+              </Box>
+            ))
+          : movies.map(({ id, title, releaseDate, backdropPath, overview }) => (
+              <MovieCard
+                key={id}
+                title={title}
+                releaseDate={releaseDate}
+                backdropPath={backdropPath}
+                overview={overview}
+              />
+            ))}
       </Carousel>
     </Box>
   );
