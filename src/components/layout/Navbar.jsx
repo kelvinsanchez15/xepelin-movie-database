@@ -1,7 +1,11 @@
 import * as React from "react";
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 import { Box, AppBar, Toolbar, Button, useScrollTrigger } from "@mui/material";
 
 import Link from "../Link";
+import { useAuth } from "../../hooks/useAuth";
+import { logoutCurrentUser } from "../../app/authSlice";
 
 function ElevationScroll({ children }) {
   const trigger = useScrollTrigger({
@@ -15,22 +19,40 @@ function ElevationScroll({ children }) {
 }
 
 export default function Navbar() {
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const { user } = useAuth();
+
+  const onLogOut = () => {
+    dispatch(logoutCurrentUser());
+    router.push("/signin");
+  };
+
   return (
     <Box component="nav" sx={{ flexGrow: 1 }}>
       <ElevationScroll>
         <AppBar elevation={0}>
           <Toolbar sx={{ justifyContent: "flex-end" }}>
-            <Button
-              component={Link}
-              href="/signin"
-              variant="contained"
-              sx={{ mr: 2 }}
-            >
-              Entrar
-            </Button>
-            <Button component={Link} href="/signup" variant="contained">
-              Registrarse
-            </Button>
+            {!user ? (
+              <>
+                <Button
+                  component={Link}
+                  href="/signin"
+                  variant="contained"
+                  sx={{ mr: 2 }}
+                >
+                  Entrar
+                </Button>
+                <Button component={Link} href="/signup" variant="contained">
+                  Registrarse
+                </Button>
+              </>
+            ) : (
+              <Button onClick={onLogOut} variant="contained">
+                Salir
+              </Button>
+            )}
           </Toolbar>
         </AppBar>
       </ElevationScroll>
