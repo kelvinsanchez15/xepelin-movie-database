@@ -1,5 +1,6 @@
 import { Box, IconButton, Skeleton } from "@mui/material";
 import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
