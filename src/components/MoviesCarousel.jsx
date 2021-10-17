@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Box, IconButton, Skeleton } from "@mui/material";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -123,3 +124,16 @@ export default function MoviesCarousel({ movies, loading }) {
     </Box>
   );
 }
+
+MoviesCarousel.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      releaseDate: PropTypes.string.isRequired,
+      backdropPath: PropTypes.string.isRequired,
+      overview: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  loading: PropTypes.bool,
+};

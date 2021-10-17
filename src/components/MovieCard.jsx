@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import Image from "next/image";
 import {
@@ -67,6 +68,14 @@ function MovieDetailsDialog({ open, onClose, title, overview, backdropPath }) {
   );
 }
 
+MovieDetailsDialog.propTypes = {
+  open: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  backdropPath: PropTypes.string.isRequired,
+  overview: PropTypes.string.isRequired,
+};
+
 export default function MovieCard({
   title,
   releaseDate,
@@ -131,3 +140,10 @@ export default function MovieCard({
     </>
   );
 }
+
+MovieCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  releaseDate: PropTypes.string.isRequired,
+  backdropPath: PropTypes.string.isRequired,
+  overview: PropTypes.string.isRequired,
+};
