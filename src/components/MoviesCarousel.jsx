@@ -35,9 +35,9 @@ const responsive = {
   },
 };
 
-function CarouselCustomButtonGroup({ next, previous, goToSlide, ...rest }) {
+function CarouselCustomButtonGroup({ next, previous, ...rest }) {
   const {
-    carouselState: { currentSlide },
+    carouselState: { currentSlide, totalItems, slidesToShow },
   } = rest;
   return (
     <Box
@@ -77,6 +77,8 @@ function CarouselCustomButtonGroup({ next, previous, goToSlide, ...rest }) {
           "&:hover": {
             backgroundColor: (theme) => theme.palette.primary.dark,
           },
+          // Ocultar botón cuando la cantidad de elementos sea menor o igual que los slides a mostrar
+          visibility: totalItems <= slidesToShow ? "hidden" : "visible",
         }}
       >
         <ArrowForwardIcon fontSize="large" />
