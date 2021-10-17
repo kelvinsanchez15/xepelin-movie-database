@@ -51,3 +51,35 @@ export const getLatestMovies = async () => {
   const { results } = await res.json();
   return normalizeResults(results);
 };
+
+export const getMovieDetailsById = async (movieId) => {
+  const query = `${BASE_URL}/${movieId}?api_key=${API_KEY}&language=${LANGUAGE}`;
+  const res = await fetch(query);
+  const data = await res.json();
+
+  const {
+    id,
+    title,
+    release_date: releaseDate,
+    backdrop_path: backdropPath,
+    overview,
+  } = data;
+
+  return {
+    id,
+    title,
+    releaseDate,
+    backdropPath,
+    overview,
+  };
+};
+
+export const getFavoritesMoviesWithDetails = async (moviesArray) => {
+  const favoritesMovies = await Promise.all(
+    moviesArray.map(async ({ movieId }) => {
+      return getMovieDetailsById(movieId);
+    })
+  );
+
+  return favoritesMovies;
+};
