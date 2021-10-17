@@ -95,6 +95,7 @@ export default function MoviesCarousel({ movies, loading }) {
       <Carousel
         responsive={responsive}
         arrows={false}
+        draggable={false}
         renderButtonGroupOutside
         customButtonGroup={<CarouselCustomButtonGroup />}
       >
