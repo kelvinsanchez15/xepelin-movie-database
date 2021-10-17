@@ -6,25 +6,30 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import MovieCard from "./MovieCard";
 
+// Maneja los elementos mostrados en el carousel de forma responsive
 const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
+  xl: {
+    breakpoint: { max: 3000, min: 1280 },
     items: 6,
     slidesToSlide: 6,
   },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 6,
-    slidesToSlide: 6,
+  lg: {
+    breakpoint: { max: 1280, min: 1024 },
+    items: 5,
+    slidesToSlide: 5,
   },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
+  md: {
+    breakpoint: { max: 1024, min: 840 },
     items: 4,
     slidesToSlide: 4,
   },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
+  sm: {
+    breakpoint: { max: 840, min: 630 },
+    items: 3,
+    slidesToSlide: 3,
+  },
+  xs: {
+    breakpoint: { max: 630, min: 0 },
     items: 2,
     slidesToSlide: 2,
   },
