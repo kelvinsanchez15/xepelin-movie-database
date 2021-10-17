@@ -58,7 +58,7 @@ function MovieDetailsDialog({ open, onClose, title, overview, backdropPath }) {
               component="p"
               sx={{ color: "text.secondary" }}
             >
-              {overview}
+              {overview || "Aún no existe una sinopsis para esta película."}
             </Typography>
           </Box>
         </Box>
