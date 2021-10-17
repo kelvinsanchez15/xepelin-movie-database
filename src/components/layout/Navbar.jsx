@@ -6,6 +6,7 @@ import { Box, AppBar, Toolbar, Button, useScrollTrigger } from "@mui/material";
 import Link from "../Link";
 import { useAuth } from "../../hooks/useAuth";
 import { logoutCurrentUser } from "../../app/authSlice";
+import { clearFavoritesMovies } from "../../app/favoritesMoviesSlice";
 
 function ElevationScroll({ children }) {
   const trigger = useScrollTrigger({
@@ -26,6 +27,7 @@ export default function Navbar() {
 
   const onLogOut = () => {
     dispatch(logoutCurrentUser());
+    dispatch(clearFavoritesMovies());
     router.push("/signin");
   };
 

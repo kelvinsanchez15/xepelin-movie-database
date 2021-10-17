@@ -4,7 +4,11 @@ import { api } from "./services/auth";
 const slice = createSlice({
   name: "favoritesMovies",
   initialState: { movies: [] },
-  reducers: {},
+  reducers: {
+    clearFavoritesMovies: (state) => {
+      state.movies = [];
+    },
+  },
   extraReducers: (builder) => {
     builder.addMatcher(
       api.endpoints.getFavoritesMovies.matchFulfilled,
@@ -17,4 +21,6 @@ const slice = createSlice({
 
 export default slice.reducer;
 
-// export const selectCurrentUser = (state) => state.auth.user;
+export const selectFavoritesMovies = (state) => state.favoritesMovies.movies;
+
+export const { clearFavoritesMovies } = slice.actions;
