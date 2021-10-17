@@ -94,22 +94,21 @@ export default function MovieCard({
 
   return (
     <>
-      <Card sx={{ width: 188, boxShadow: "none" }}>
+      <Card sx={{ boxShadow: "none", pr: 1 }}>
         <CardActionArea onClick={handleClickOpenDialog}>
           <Box
             sx={{
               position: "relative",
               overflow: "hidden",
-              width: 188,
-              height: 282,
               borderRadius: "6px",
               mb: 2,
             }}
           >
             <Image
               src={`https://www.themoviedb.org/t/p/w220_and_h330_face${backdropPath}`}
-              layout="fill"
-              objectFit="cover"
+              width={188}
+              height={282}
+              layout="responsive"
               alt={title}
             />
           </Box>
