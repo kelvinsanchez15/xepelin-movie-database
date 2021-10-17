@@ -42,20 +42,18 @@ function CarouselCustomButtonGroup({ next, previous, ...rest }) {
     carouselState: { currentSlide, totalItems, slidesToShow },
   } = rest;
   return (
-    <Box
-      sx={{
-        position: "absolute",
-        top: "38%",
-        display: "flex",
-        justifyContent: "space-between",
-        width: "calc(100% + 24px);",
-        left: "-16px",
-      }}
-    >
+    <>
       <IconButton
         className={currentSlide === 0 ? "disable" : ""}
         onClick={() => previous()}
         sx={{
+          position: "absolute",
+          top: "33%",
+          left: {
+            xs: -12,
+            sm: -20,
+            lg: -28,
+          },
           width: 72,
           height: 72,
           backgroundColor: (theme) => theme.palette.primary.main,
@@ -72,6 +70,13 @@ function CarouselCustomButtonGroup({ next, previous, ...rest }) {
       <IconButton
         onClick={() => next()}
         sx={{
+          position: "absolute",
+          right: {
+            xs: -12,
+            sm: -16,
+            lg: -28,
+          },
+          top: "33%",
           width: 72,
           height: 72,
           backgroundColor: (theme) => theme.palette.primary.main,
@@ -85,7 +90,7 @@ function CarouselCustomButtonGroup({ next, previous, ...rest }) {
       >
         <ArrowForwardIcon fontSize="large" />
       </IconButton>
-    </Box>
+    </>
   );
 }
 
