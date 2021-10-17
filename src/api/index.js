@@ -1,7 +1,7 @@
 import formatDateLocally from "../utils/formatDateLocally";
 
 const BASE_URL = "https://api.themoviedb.org/3/movie";
-const TMDB_API_KEY = process.env.TMDB_API_KEY;
+const TMDB_API_KEY = "b69d9e5ccb7d627bc02f3d704e5ca529";
 const LANGUAGE = "es-MX";
 
 const normalizeResults = (results) => {
