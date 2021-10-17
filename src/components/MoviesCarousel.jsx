@@ -131,7 +131,7 @@ MoviesCarousel.propTypes = {
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       releaseDate: PropTypes.string.isRequired,
-      backdropPath: PropTypes.string.isRequired,
+      backdropPath: PropTypes.string,
       overview: PropTypes.string.isRequired,
     })
   ).isRequired,

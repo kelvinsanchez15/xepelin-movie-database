@@ -72,7 +72,7 @@ MovieDetailsDialog.propTypes = {
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
-  backdropPath: PropTypes.string.isRequired,
+  backdropPath: PropTypes.string,
   overview: PropTypes.string.isRequired,
 };
 
@@ -144,6 +144,6 @@ export default function MovieCard({
 MovieCard.propTypes = {
   title: PropTypes.string.isRequired,
   releaseDate: PropTypes.string.isRequired,
-  backdropPath: PropTypes.string.isRequired,
+  backdropPath: PropTypes.string,
   overview: PropTypes.string.isRequired,
 };
