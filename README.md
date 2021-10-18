@@ -12,6 +12,12 @@ Catálogo de películas que utiliza la [API de The Movie DB (TMDB)](https://www.
 
 ![Multidevices mockup](https://user-images.githubusercontent.com/4708484/137650774-c125bd8a-eb7d-4ec8-b175-73f52a74bdfc.png)
 
+## Notas de configuración
+
+Para desarrollo local: `npm run dev`
+
+Al ejecutar la [API de pruebas de Zepelin](https://github.com/xepelinapp/xepelin-test-front-api), se debe configurar el puerto del servidor a `4000` en vez de `3000`.
+
 ## Dependencias centrales
 
 - [React](https://reactjs.org/) - Una librería de Javascript para crear interfaces de usuario.
