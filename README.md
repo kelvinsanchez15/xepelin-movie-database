@@ -75,4 +75,4 @@ Debido al tiempo limitado para la realización de la prueba, algunas funcionalid
 - [NextJS](https://nextjs.org/) - Un framework de React con renderizado híbrido estático y en el servidor.
 - [Material UI](https://material-ui.com/) - Un sistema de diseño basado en componentes de React.
 - [Redux](https://redux.js.org/) - Un contenedor de estado predecible para JS Apps.
-- [react-multi-carousel](hhttps://github.com/YIZHUANG/react-multi-carousel) - Un componente de carrusel de React personalizable que soporta múltiples elementos y SSR.
+- [react-multi-carousel](https://github.com/YIZHUANG/react-multi-carousel) - Un componente de carrusel de React personalizable que soporta múltiples elementos y SSR.
