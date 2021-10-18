@@ -6,7 +6,7 @@
 
 ## Sobre el proyecto
 
-Catálogo de películas que utiliza la API de [The Movie DB (TMDB)](https://www.themoviedb.org/) como fuente de información.
+Catálogo de películas que utiliza la [API de The Movie DB (TMDB)](https://www.themoviedb.org/documentation/api) como fuente de información y la [API de pruebas de Zepelin](https://github.com/xepelinapp/xepelin-test-front-api) para el manejo del flujo de autenticación.
 
 ## Capturas
 
